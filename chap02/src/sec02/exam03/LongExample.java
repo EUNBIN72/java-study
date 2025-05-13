@@ -14,7 +14,7 @@ public class LongExample {
 		
 		System.out.println(var1);  // 10
 		System.out.println(var2);  // 20
-		System.out.println(var4);  // 20000000000s
+		System.out.println(var4);  // 20000000000
 		
 	}
 }
