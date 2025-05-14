@@ -11,5 +11,6 @@ public class VariableInitExample {
 		int value = 30;
 		int result = value + 10 ;
 		System.out.println(result);
+		
 	}
 }

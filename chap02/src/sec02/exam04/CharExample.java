@@ -7,14 +7,14 @@ public class CharExample {
 		//하나의 문자를 유니코드로 저장
 		//유니코드 : 세계 각국의 문자들을 2byte(0~65535) 범위에 맵핑한 국제 표준 규약
 		
-		char c1 = 'A';  // 실제로는 유니코드 값인 65가 메모리에  저장됨  // A
-		char c2 = 65;   // 정수 타입이라 정수값도 저장 가능           // A
+		char c1 = 'A';  // 실제로는 유니코드 값인 65가 메모리에  저장됨  
+		char c2 = 65;   // 정수 타입이라 정수값도 저장 가능           
 //		char c = -65;   // 음수값 저장 안됨, 유니코드는 0부터 시작
-		char c3 = '\u0041';  //유니코드를 의미 + 16진수(잘 안씀 )    // A
+		char c3 = '\u0041';  //유니코드를 의미 + 16진수(잘 안씀 )    
 		
-		System.out.println(c1);
-		System.out.println(c2);
-		System.out.println(c3);
+		System.out.println(c1);   // A
+		System.out.println(c2);   // A
+		System.out.println(c3);   // A
 		
 		System.out.println();
 		
@@ -33,13 +33,13 @@ public class CharExample {
 		char var = '각';
 		int unicode = var;
 		System.out.println(unicode);  // 44033
-		System.out.println((int) var);  // 강제 타입 변환
+		System.out.println((int) var);  // 강제 타입 변환  // 44033
 		
 		System.out.println();
 		
 		// (참고) char 타입의 산술 연산
-		char var1 = 'A' + 1;       // B(65+1=66)
-		System.out.println(var1);
+		char var1 = 'A' + 1;       
+		System.out.println(var1);  // B(65+1=66)
 		char var2 = 'A';
 //		char var3 = var2 + 1;      // char 변수 var2가 산술 연산에 쓰이면 int로 먼저 변환됨
 		

@@ -16,5 +16,6 @@ public class LongExample {
 		System.out.println(var2);  // 20
 		System.out.println(var4);  // 20000000000
 		
+		
 	}
 }
