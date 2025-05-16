@@ -12,7 +12,7 @@ public class homework1 {
 		
 		int fee;
 		
-		if (age <3 ) {
+		if (age < 3 ) {
 			fee = 0;			
 		} else if (age <= 12) {
 			fee = 10000;
