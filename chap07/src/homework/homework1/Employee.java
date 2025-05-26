@@ -1,4 +1,4 @@
-package sec01.homework.homework1;
+package homework.homework1;
 
 public class Employee extends Person {
 	// 필드
