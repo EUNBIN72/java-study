@@ -37,7 +37,7 @@ public class Chocolate extends Cake {
 	
 	// 필드에 담긴 데이터를 반환하는 메소드
 	public String toString() {
-		return null;
+		return super.toString() + "체리 : " + cherry + "(개)" + "\n초콜릿 칩 : " + chip + "(개)\n초콜릿 케이크가 완성되었습니다.";
 	}
 
 

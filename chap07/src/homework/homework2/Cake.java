@@ -39,7 +39,7 @@ public class Cake {
 
 	// 필드에 담긴 데이터를 반환하는 메소드
 	public String toString() {
-		return null;
+		return "밀가루: " + flour + "(g)" + "\n크림 : " + cream + "(g)n";
 	}
 
 }
