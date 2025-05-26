@@ -57,7 +57,7 @@ public class TryCatchFinallyFlow {
 		}
 		System.out.println(6);
 		
-		// 정답: 1256
+		// 정답: 125
 		
 		
 	
