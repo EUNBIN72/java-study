@@ -17,7 +17,8 @@ public class TryCatchFinallyFlow {
 		}
 		System.out.println(6);
 		
-		// 정답 : 12356
+		// 정답 : 1 2 3 5 6
+		// 예외 발생 안해서 catch문 건너뛰어
 		
 		System.out.println("=============");
 		
@@ -26,8 +27,7 @@ public class TryCatchFinallyFlow {
 		try {
 			System.out.println(2);
 			
-			System.out.println(0/0);
-			
+			System.out.println(0/0); // 예외발생 -> 발생한 예외와 일치하는 catch 블럭이 있는지 혹인 -> 예외 처리됨
 			
 			System.out.println(3);
 		} catch (ArithmeticException e) {
@@ -37,7 +37,7 @@ public class TryCatchFinallyFlow {
 		}
 		System.out.println(6);
 
-		// 정답 : 12456
+		// 정답 : 1 2 4 5 6
 		
 		System.out.println("=============");
 		
@@ -48,16 +48,17 @@ public class TryCatchFinallyFlow {
 			System.out.println(2);
 			
 			System.out.println(args[0]);
+			// 예외 발생 -> 발생한 예외와 일치하는 catch 블럭을 찾지 못하면 예외는 처리되지 못함 => 비정상 종료
 			
 			System.out.println(3);
 		} catch (ArithmeticException e) {
 			System.out.println(4);
 		} finally {
-			System.out.println(5);
+			System.out.println(5);  // 무조건 실행
 		}
 		System.out.println(6);
 		
-		// 정답: 125
+		// 정답: 1 2 5
 		
 		
 	
