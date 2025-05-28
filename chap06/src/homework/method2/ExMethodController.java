@@ -1,6 +1,6 @@
 package homework.method2;
 
-public class Library {
+public class ExMethodController {
 	// 전달된 메시지 출력하는 메소드
 	public void printMessage(String message) {
 		System.out.println(message);

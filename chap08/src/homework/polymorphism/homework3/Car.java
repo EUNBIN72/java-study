@@ -10,7 +10,7 @@ public class Car {
 	}
 	
 	void startEngine () {
-		
+		engine.start();
 	}
 
 }

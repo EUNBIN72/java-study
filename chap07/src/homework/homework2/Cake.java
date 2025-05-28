@@ -36,10 +36,11 @@ public class Cake {
 	
 	
 	
-
-	// 필드에 담긴 데이터를 반환하는 메소드
+	@Override
 	public String toString() {
-		return "밀가루: " + flour + "(g)" + "\n크림 : " + cream + "(g)n";
+		String result = "밀가루 : " + flour + "(g)\n";
+		result += "크림 : " + cream + "(g)\n";
+		return result;
 	}
 
 }

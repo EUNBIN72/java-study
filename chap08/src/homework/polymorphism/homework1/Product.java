@@ -28,7 +28,7 @@ public class Product {
 
 	//10% 할인된 금액 리턴
 	public int calculatePrice() {
-			return price * 10/100;
+			return price * 90/100;
 		}
 
 

@@ -47,7 +47,7 @@ public class CakeMenu {
 		double powder = sc.nextDouble();
 		System.out.print("치즈 큐브(개) : ");
 		int cheese = sc.nextInt();
-		System.out.println(gtc.bakeGreenTea(flour, cream, powder, cheese));
+		System.out.println(gtc.bakeGreenTeaCake(flour, cream, powder, cheese));
 	}
 	
 	

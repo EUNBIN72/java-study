@@ -34,10 +34,13 @@ public class GreenTea extends Cake {
 		this.cheese = cheese;
 	}
 	
-	// 필드에 담긴 데이터를 반환하는 메소드
+	@Override
 	public String toString() {
-		return super.toString() + "녹차 파우더 : " + powder + "(g)" + "\n치즈 큐브 : " + cheese + "(개)\n치즈 케이크가 완성되었습니다.";
+		String result = super.toString();
+		result += "녹차 파우더 : " + powder + "(g)\n";
+		result += "치즈 큐브 : " + cheese + "(개)\n";
+		result += "치즈 케이크가 완성되었습니다.";
+		return result;	
 	}
-
 
 }

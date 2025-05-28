@@ -19,8 +19,8 @@ public class Main {
 		bank.transfer(ac1, ac2, 50000);
 		
 	   // 각 계좌의 계좌번호와 잔액 출력
-		System.out.println(ac1.getBalance());
-		System.out.println(ac2.getBalance());
+		System.out.println("계좌번호 : " + ac1.getAccountNumber() + " 잔액 : " + ac1.getBalance());
+		System.out.println("계좌번호 : " + ac2.getAccountNumber() + " 잔액 : " + ac2.getBalance());
 	}
 
 }

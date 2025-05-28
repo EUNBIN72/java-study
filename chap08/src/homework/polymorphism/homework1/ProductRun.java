@@ -8,8 +8,8 @@ public class ProductRun {
 	Product p2;
 	
 	// Food와 Book의 매개변수가 있는 생성자로 참조변수에 할당
-	p1 = new Food("치킨", 2000, 3);
-	p2 = new Food("자바의 정석", 15000, 0);
+	p1 = new Food("치킨", 20000, 3);
+	p2 = new Book("자바의 정석", 15000);
 	
 	
 	//2개의 할인된 금액을 계산
