@@ -2,12 +2,12 @@ package homework.homework2;
 
 public class Cake {
 	// 필드
-	private double flour;
-	private double cream;
+	private double flour;  //밀가루
+	private double cream;  //크림
 	
 	
 	// 기본 생성자
-	Cake(){
+	Cake() {
 		
 	}
 	
@@ -35,7 +35,7 @@ public class Cake {
 	}
 	
 	
-	
+	// 밀가루랑 크림 출력
 	@Override
 	public String toString() {
 		String result = "밀가루 : " + flour + "(g)\n";

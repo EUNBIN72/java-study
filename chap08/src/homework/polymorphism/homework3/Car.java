@@ -5,11 +5,11 @@ public class Car {
 	private Engine engine;
 	
 	//생성자
-	Car(Engine engine) {
-		
+	public Car(Engine engine) {
+		this.engine = engine;
 	}
 	
-	void startEngine () {
+	public void startEngine () {
 		engine.start();
 	}
 

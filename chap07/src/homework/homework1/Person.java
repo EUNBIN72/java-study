@@ -1,5 +1,6 @@
 package homework.homework1;
 
+// 부모 클래스
 public class Person {
 	// 필드
 	String name;
@@ -18,11 +19,14 @@ public class Person {
 		this.weight = weight;
 	}
 	
+	// 객체가 가지고 있는 정보나 값들을 문자열로 만들어 리턴하는 메소드
 	public String toString() {
 		return "===" + name + "===\n" + "나이 : " + age + "\n" + "키 : " +  height + "\n" + "몸무게 : " + weight;
 		
 	}
 
+	
+	//Getter()/Setter()
 	public int getAge() {
 		return age;
 	}
@@ -47,7 +51,6 @@ public class Person {
 		this.weight = weight;
 	}
 	
-	
-	// 메소드
+
 
 }

@@ -1,5 +1,6 @@
 package homework.homework1;
 
+// 자식 클래스
 public class Student extends Person {
 	// 필드
 	private int grade;

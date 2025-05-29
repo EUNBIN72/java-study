@@ -44,6 +44,7 @@ public class Run {
 				String dept = sc.nextLine();
 				
 				
+				// employeeList 객체에 입력 받은 내용들을 담아
 				employeeList[count] = new Employee(name,age,height,weight,salary,dept);
 				count++;
 				

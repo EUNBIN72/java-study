@@ -5,7 +5,6 @@ public abstract class SmartPhone implements CellPhone, TouchDisplay {
 	public SmartPhone() {
 		
 	}
-	public void printMaker() {
-		
-	}
+	
+	public abstract void printMaker();
 }

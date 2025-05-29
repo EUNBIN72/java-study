@@ -1,5 +1,6 @@
 package homework.polymorphism.homework1;
 
+//부모 클래스
 public class Product {
 	//필드
 	private String name;
