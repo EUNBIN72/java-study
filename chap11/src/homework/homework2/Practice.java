@@ -23,6 +23,6 @@ public class Practice {
             }
         }
 
-        return result.trim();
+        return result;
     }
 }
