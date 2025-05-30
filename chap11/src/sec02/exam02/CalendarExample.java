@@ -23,9 +23,9 @@ public class CalendarExample {
 		int month = now.get(Calendar.MONTH) + 1;  // 월 : 0~11 (0이 1월, 11이 12월)
 		int day = now.get(Calendar.DAY_OF_MONTH);  // 일 : 1~31
 		
-		System.out.print(year + "년 ");
-		System.out.print(month + "월 ");
-		System.out.print(day + "일 ");
+		System.out.print(year + "년 ");  //2025년
+		System.out.print(month + "월 ");  //5월
+		System.out.print(day + "일 ");  //
 				
 		int week = now.get(Calendar.DAY_OF_WEEK);  // 요일 : 1(일) ~ 7(토)
 		String strWeek = null;

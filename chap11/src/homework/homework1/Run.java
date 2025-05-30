@@ -19,7 +19,7 @@ public class Run {
 		for(int i = 0; i < pLine.length; i++) {
 			String[] per = pLine[i].split(",");
 			// 이때 타입을 맞춰줘야 됨 
-			// String 타입을 받았으니가 int는 Integer.parseInt()로 타입 변환, char는 charAt()으로 문자를 가져와
+			// String 타입을 받았으니까 int는 Integer.parseInt()로 타입 변환, char는 charAt()으로 문자를 가져와
 			// 각 배열에 맞게 담아줌
 			String name = per[0];
 			int age = Integer.parseInt(per[1]);
