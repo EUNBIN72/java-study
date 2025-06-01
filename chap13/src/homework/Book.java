@@ -53,7 +53,14 @@ public class Book {
 	public String toString() {
 		return title + "(" + author + "), " + category + ", " + price;
 	}
-	
+//	
+//	
+//	@Override
+//    public int compareTo(Book other) {
+//        // 책 제목을 기준으로 오름차순 정렬
+//        return this.title.compareTo(other.title);
+//    }
+//	
 	
 
 }

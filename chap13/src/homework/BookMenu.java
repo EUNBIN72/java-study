@@ -1,7 +1,10 @@
 package homework;
 
 import java.util.List;
+import java.lang.ModuleLayer.Controller;
 import java.util.Scanner;
+
+import homework.*;
 
 public class BookMenu {
 	Scanner sc = new Scanner(System.in);
@@ -98,9 +101,20 @@ public class BookMenu {
 	public void selectList() { 
 		// 1. BookController의 selectList 메소드 호출
 		// -> 결과값을 임의의 리스트 bookList생성하여 대입
+		// 2. BookControllr의 searchBook 메소드로 위의 keyword 전달
+        // -> 결과 값을 임의의 리스트 searchList를 생성후 대입
+        // -> 키워드가 완전한 도서명이 아니라 도서명의 일부 일 수 있고
+        // 일부 키워드를 입력한 경우 해당 키워드를 포함하는 여러 개의 도서 조회됨
+        // 단일 객체가 아니라 리스트로 조회
+        // 3. 조건식 이용
+        // 3-1. searchList가 비어 있는 경우
+        // -> "검색 결과가 없습니다."라는 문구 출력
+        // 3-2. searchList가 비어 있지 않은 경우
+        // -> 반복문으로 searchList 안의 Book 객체 출력
+		System.out.println("==전체 조회==");
+		
 		 List<Book> bookList = bc.selectList();
 		 
-		 System.out.println("==전체 조회==");
 		 
 		 if (bookList.isEmpty()) {
 			 System.out.println("존재하는 도서가 없습니다.");
@@ -122,12 +136,11 @@ public class BookMenu {
 		String keyword = sc.nextLine();
 		
 		// 2. BookControllr의 searchBook 메소드로 위의 keyword 전달
-
-		
 		// -> 결과 값을 임의의 리스트 searchList를 생성후 대입
         // -> 키워드가 완전한 도서명이 아니라 도서명의 일부 일 수 있고
         // 일부 키워드를 입력한 경우 해당 키워드를 포함하는 여러 개의 도서 조회됨
         // 단일 객체가 아니라 리스트로 조회
+		List<Book> searchList = bc.searchBook(keyword);
 
 		
 		if (bc.searchBook(keyword).isEmpty()) {
@@ -138,8 +151,6 @@ public class BookMenu {
 	        }
 	    }
 		
-	
-			
 	}
 	
 	
@@ -157,16 +168,34 @@ public class BookMenu {
         // 다른 도서명을 가졌지만 저자명이 같은 경우도 있을 수 있음
 		//???
 		
+	    // 3. searchList에 해당 책 추가
+//		BookController controller = new BookController();
+		Book removedBook = bc.deleteBook(title, author);
 		
 		
+        // 4. searchList 반환
+		  if (removedBook != null) {
+		        // 4-1. 삭제 성공
+		        System.out.println("성공적으로 삭제되었습니다: " + removedBook);
+		    } else {
+		        // 4-2. 삭제 실패
+		        System.out.println("삭제할 도서를 찾지 못했습니다.");
+		    }
 		
 	}
 	
 	
 	
-	public void ascBook() { 
-
-		
+	public void ascBook() {
+//        // 1. BookController의 ascBook() 메소드 호출
+//        int result = bc.ascBook();
+//
+//        // 2. 메소드 호출 결과가 1이면 성공, 그 외 실패
+//        if (result == 1) {
+//            System.out.println("정렬에 성공하였습니다.");
+//            selectList();  // 정렬 후 전체 목록 출력
+//        } else {
+//            System.out.println("정렬에 실패하였습니다.");
+//        }
 	}
-
 }
