@@ -1,6 +1,6 @@
-package homework;
+package homework_list;
 
-public class Book {
+public class Book implements Comparable<Book> {
 	private String title;
 	private String author;
 	private String category;
@@ -53,14 +53,14 @@ public class Book {
 	public String toString() {
 		return title + "(" + author + "), " + category + ", " + price;
 	}
-//	
-//	
-//	@Override
-//    public int compareTo(Book other) {
-//        // 책 제목을 기준으로 오름차순 정렬
-//        return this.title.compareTo(other.title);
-//    }
-//	
+	
+	
+	@Override
+    public int compareTo(Book book) {
+        // 책 제목을 기준으로 오름차순 정렬
+        return title.compareTo(book.title);
+    }
+	
 	
 
 }

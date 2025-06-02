@@ -1,10 +1,10 @@
-package homework;
+package homework_list;
 
 import java.util.List;
 import java.lang.ModuleLayer.Controller;
 import java.util.Scanner;
 
-import homework.*;
+import homework_list.*;
 
 public class BookMenu {
 	Scanner sc = new Scanner(System.in);
@@ -13,7 +13,7 @@ public class BookMenu {
 	
 	
 	public void mainMenu() {
-		 while (true) {
+		while (true) {
 		System.out.println("=== 가남 도서관에 오신걸 환영합니다 ===");
 		System.out.println("원하시는 업무의 번호를 선택하세요.");
 		System.out.println("1. 새 도서 추가");
@@ -187,15 +187,16 @@ public class BookMenu {
 	
 	
 	public void ascBook() {
-//        // 1. BookController의 ascBook() 메소드 호출
-//        int result = bc.ascBook();
-//
-//        // 2. 메소드 호출 결과가 1이면 성공, 그 외 실패
-//        if (result == 1) {
-//            System.out.println("정렬에 성공하였습니다.");
-//            selectList();  // 정렬 후 전체 목록 출력
-//        } else {
-//            System.out.println("정렬에 실패하였습니다.");
-//        }
+        // 1. BookController의 ascBook() 메소드 호출
+        int result = bc.ascBook();
+
+        // 2. 메소드 호출 결과가 1이면 성공, 그 외 실패
+        if (result == 1) {
+            System.out.println("정렬에 성공하였습니다.");
+    
+            selectList();  // 정렬 후 전체 목록 출력
+        } else {
+            System.out.println("정렬에 실패하였습니다.");
+        }
 	}
 }

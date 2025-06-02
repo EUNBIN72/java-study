@@ -1,4 +1,4 @@
-package homework;
+package homework_list;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -71,15 +71,15 @@ public class BookController {
 		
 	}
 	
-	// 도서 오름차순 정렬
-//	public int ascBook() {
-//		// Collections.sort와 Comparable활용
-//	    // 책 이름 기준으로 오름차순 정렬 후 1 반환
-//		Collections.sort(bookList);
-//		
-//		return 1;
-//		
-//	    }
-//	
+//	 도서 오름차순 정렬
+	public int ascBook() {
+		// Collections.sort와 Comparable활용
+	    // 책 이름 기준으로 오름차순 정렬 후 1 반환
+		Collections.sort(bookList);
+		
+		return 1;
+		
+	    }
+	
 	
 }
