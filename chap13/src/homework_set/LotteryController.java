@@ -3,14 +3,18 @@ package homework_set;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 public class LotteryController {
 	// 추첨 대상을 담을 HashSet 객체 생성(lottery)
-	// 당첨 대상을 담을 HashSet 객체 생성(win)
 	Set<Lottery> lottery = new HashSet<Lottery>();
+	
+	// 당첨 대상을 담을 HashSet 객체 생성(win)
 	Set<Lottery> win = new HashSet<Lottery>();
+	
 	
 	public boolean insertObject (Lottery l) {
 		// 1. 전달 받은 l을 lottry HashSet에 추가
@@ -50,40 +54,45 @@ public class LotteryController {
 		// 이때, 당첨자 수는 무조건 4명 이를 위한 추첨자 수는 4명 이상
 		// 만일 당첨자 목록에 삭제된 추첨 대상자가 있다면
 		// 기존에 당첨된 사람은 제외
+		win.retainAll(lottery);
+		
 		// 삭제된 사람의 자리만 새로운 추첨자로 채우기
-		List<Lottery> lottery = new ArrayList<Lottery>();
+		List<Lottery> lotteryList = new ArrayList<>(lottery);
+		// 삭제된 대상자는 당첨자에서 제거함
 		
 		// 당첨자 수가 4명보다 작으면 반복문을 실행하지 않고
 		// 당첨자가 4명 이상일 때 랜덤으로 값을 뽑아서 당첨자 리스트에 저장
-		while(lottery.size() < 4) {
-			while (true) {
-				int randomIndex = (int) Math.random() * (lottery.size());
-				Lottery winner = lottery.get(randomIndex);
-				win.add(winner);
-			} 
-			
-		}
-		
-		return win;
-		
-		
-		
-		
+		Random rand = new Random();
+		// 당첨자가 4명이 될 때까지 뽑는다
+		while (win.size() < 4) {
+	        int randomIndex = rand.nextInt(lotteryList.size());
+	        Lottery winner = lotteryList.get(randomIndex);
+	        win.add(winner); // 중복 방지를 위해 Set 사용
+	    }
+
+	    return win;
 		
 	}
 	
-//	public Set<Lottery> sortedWinObject() {
-//		// 1. 이름을 오름차순으로 정렬
-//		// 이름이 같으면 번호로 오름차순 정렬
-//		// 정렬의 결과를 반환
-//		// 이때, 미리 만들어진 win을 가지고 정렬
-////		Collections.sort();
-//	}
-//	
-//	public boolean searchWinner(Lottery l) {
-//		// 1. win에 해당 객체가 있는지 확인
-//		// 2. 결과 boolean을 리턴
-//	}
-//	
+	
+	public Set<Lottery> sortedWinObject() {
+		// 1. 이름을 오름차순으로 정렬
+		// 이름이 같으면 번호로 오름차순 정렬
+		// 정렬의 결과를 반환
+		// 이때, 미리 만들어진 win을 가지고 정렬
+		List<Lottery> sortedList = new ArrayList<Lottery>(win);
+		Collections.sort(sortedList);
+		
+		// 정렬된 순서를 유지하면서 Set으로 변환
+		return new LinkedHashSet<Lottery>(sortedList);
+	}
+	
+	public boolean searchWinner(Lottery l) {
+		// 1. win에 해당 객체가 있는지 확인
+		// 2. 결과 boolean을 리턴
+		return win.contains(l);
+				
+	}
+	
 
 }

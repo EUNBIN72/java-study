@@ -1,5 +1,6 @@
 package homework_set;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
@@ -105,7 +106,7 @@ public class LotteryMenu {
 		System.out.println("===== 2. 추첨 대상 삭제 =====");
 		System.out.println("삭제할 대상의 이름과 핸드폰 번호를 입력하세요.");
 		// 1. 삭제할 대상의 이름과 휴대폰 번호 입력 받음
-		System.out.println("이름 : ");
+		System.out.print("이름 : ");
 		String name = sc.nextLine();
 		
 		System.out.print("휴대폰 번호(-빼고) : ");
@@ -144,25 +145,68 @@ public class LotteryMenu {
 	
 	// 4. 당첨 대상 확인용 view 메소드
 	public void winObject() {
+		System.out.println("===== 4. 당첨 대상 구성 =====");
 		// lc에서 받아온 Set 객체를 표준 출력
+		Set<Lottery> result = lc.winObject();
 		// lc의 winObject 리턴값이 null이면 
 		// "추첨 대상이 4명이상이어야 당첨 대상을 구성할 수 있습니다."출력
-//		Set<Lottery> 
+		if (result == null) {
+		       System.out.println("추첨 대상이 4명이상이어야 당첨 대상을 구성할 수 있습니다.");
+		       return;
+		}
+		
+		for (Lottery lottery : result) {
+			System.out.println(lottery);
+		}
+
 		
 	}
 	
 	// 5. 정렬된 당첨 대상 확인
 	public void sortedWinObject() {
-		// 1. 이름을 오름차순으로 정렬
-		// 이름이 같으면 번호로 오름차순 정렬
-		// 정렬의 결과를 반환
-		// 이때, 미리 만들어진 win을 가지고 정렬
+		System.out.println("===== 5. 정렬된 당첨 대상 확인 =====");
+		// lc에서 받아온 Set 객체를 Iterator를 통해 출력
+		Set<Lottery> sortedWin = lc.sortedWinObject(); // lc에서 정렬된 Set 받음
+		
+		Iterator<Lottery> it = sortedWin.iterator();
+	    while (it.hasNext()) {
+	        Lottery winner = it.next();
+	        System.out.println(winner);  // Lottery의 toString() 메서드가 출력 형식을 결정
+	    }
+	    
+	    if (sortedWin == null || sortedWin.isEmpty()) {
+	        System.out.println("당첨자가 없습니다.");
+	        return;
+	    }
+		
 			
-		}
+	}
 	
 	// 6. 당첨 대상 검색용 view 메소드
 	public void serchWinner() {
-		
+		System.out.println("===== 5. 정렬된 당첨 대상 확인 =====");
+		// 1. 검색할 대상의 이름과 핸드폰 번호 받기
+		System.out.print("검색할 대상의 이름과 핸드폰 번호를 입력하세요.");
+		System.out.print("이름 : ");
+	    String name = sc.nextLine();
+	    System.out.print("핸드폰 번호('-'빼고) : ");
+	    String phone = sc.nextLine();
+	    
+		// 2. Lottery의 매개변수 생성자를 이용
+	    Lottery target = new Lottery(name, phone);
+	    
+		// 3. 정보 담긴 객체를 lc의 searchWinner에 보내기
+	    boolean result = lc.searchWinner(target);
+	    
+		// 4. 받은 결과가 true면 "축하합니다. 당첨 목록에 존재합니다."
+		// 5. false면 "다음 기회에!" 출력
+	    if (result) {
+	        System.out.println("축하합니다. 당첨 목록에 존재합니다.");
+	    } else {
+	        // 5. false면
+	        System.out.println("다음 기회에!");
+	    }
+	    
 	}
 	
 	

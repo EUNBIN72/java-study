@@ -62,28 +62,15 @@ public class Lottery implements Comparable<Lottery> {
 	}
 	
 	
-	private void compareTo() {
-		// TODO Auto-generated method stub
-
-	}
 
 	@Override
 	public int compareTo(Lottery o) {
-		if (name != o.name) {
-			this.name.compareTo(name);
-		} else {
-			this.phone.compareTo(phone);
-		}
-		return 0;
+		int nameCompare = this.name.compareTo(o.name);
+		if (nameCompare != 0) return nameCompare;
+		return this.phone.compareTo(o.phone);
 	}
 	
-//	if (age != other.age) {
-//		// 나이 오름차순
-//	} else {
-//		// 이름순
-//	}
-	
-	
+
 	
 	
 	
