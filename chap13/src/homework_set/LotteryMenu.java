@@ -72,7 +72,7 @@ public class LotteryMenu {
 		int count = 0;
 		sc.nextLine();  // 버퍼 클리어
 		while (count < countNum) {
-			// 2. 입력 받은 수만큼 추첨자 이름과 핸드폰 번호 입력 받음
+		// 2. 입력 받은 수만큼 추첨자 이름과 핸드폰 번호 입력 받음
 		System.out.print("이름 : ");
 		String name = sc.nextLine();
 		
@@ -151,7 +151,7 @@ public class LotteryMenu {
 		// lc의 winObject 리턴값이 null이면 
 		// "추첨 대상이 4명이상이어야 당첨 대상을 구성할 수 있습니다."출력
 		if (result == null) {
-		       System.out.println("추첨 대상이 4명이상이어야 당첨 대상을 구성할 수 있습니다.");
+		       System.out.println("추첨 대상이 4명 이상이어야 당첨 대상을 구성할 수 있습니다.");
 		       return;
 		}
 		
@@ -159,7 +159,6 @@ public class LotteryMenu {
 			System.out.println(lottery);
 		}
 
-		
 	}
 	
 	// 5. 정렬된 당첨 대상 확인
@@ -186,7 +185,7 @@ public class LotteryMenu {
 	public void serchWinner() {
 		System.out.println("===== 5. 정렬된 당첨 대상 확인 =====");
 		// 1. 검색할 대상의 이름과 핸드폰 번호 받기
-		System.out.print("검색할 대상의 이름과 핸드폰 번호를 입력하세요.");
+		System.out.println("검색할 대상의 이름과 핸드폰 번호를 입력하세요.");
 		System.out.print("이름 : ");
 	    String name = sc.nextLine();
 	    System.out.print("핸드폰 번호('-'빼고) : ");

@@ -64,10 +64,10 @@ public class Lottery implements Comparable<Lottery> {
 	
 
 	@Override
-	public int compareTo(Lottery o) {
-		int nameCompare = this.name.compareTo(o.name);
+	public int compareTo(Lottery l) {
+		int nameCompare = this.name.compareTo(l.name);
 		if (nameCompare != 0) return nameCompare;
-		return this.phone.compareTo(o.phone);
+		return this.phone.compareTo(l.phone);
 	}
 	
 

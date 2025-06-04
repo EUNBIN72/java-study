@@ -56,22 +56,17 @@ public class LotteryController {
 		// 기존에 당첨된 사람은 제외
 		win.retainAll(lottery);
 		
-		// 삭제된 사람의 자리만 새로운 추첨자로 채우기
-		List<Lottery> lotteryList = new ArrayList<>(lottery);
-		// 삭제된 대상자는 당첨자에서 제거함
+
 		
 		// 당첨자 수가 4명보다 작으면 반복문을 실행하지 않고
 		// 당첨자가 4명 이상일 때 랜덤으로 값을 뽑아서 당첨자 리스트에 저장
-		Random rand = new Random();
-		// 당첨자가 4명이 될 때까지 뽑는다
+		List<Lottery> lotteryList = new ArrayList<Lottery>(lottery);
 		while (win.size() < 4) {
-	        int randomIndex = rand.nextInt(lotteryList.size());
-	        Lottery winner = lotteryList.get(randomIndex);
-	        win.add(winner); // 중복 방지를 위해 Set 사용
-	    }
-
-	    return win;
+			int randomIdx = (int) (Math.random() * lotteryList.size());
+			win.add(lotteryList.get(randomIdx));
+		}
 		
+		return win;
 	}
 	
 	
@@ -86,6 +81,7 @@ public class LotteryController {
 		// 정렬된 순서를 유지하면서 Set으로 변환
 		return new LinkedHashSet<Lottery>(sortedList);
 	}
+	
 	
 	public boolean searchWinner(Lottery l) {
 		// 1. win에 해당 객체가 있는지 확인
