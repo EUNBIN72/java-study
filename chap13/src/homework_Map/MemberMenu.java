@@ -261,12 +261,9 @@ public class MemberMenu {
 		// id, name
 		TreeMap<String, String> resultMap = mc.sameName(searchName);
 		
-		if (resultMap.containsKey(searchName)) {
-			for (Map.Entry<String, String> entry : resultMap.entrySet()) {
-				System.out.println(entry.getValue() + " - " + entry.getKey());
-			}
+		for (Map.Entry<String, String> entry : resultMap.entrySet()) {
+			System.out.println(entry.getValue() + " - " + entry.getKey());
 		}
-		
 	}
 
 }

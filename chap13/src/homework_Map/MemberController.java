@@ -60,11 +60,13 @@ public class MemberController {
 		map.get(id).setName(newName);
 	}
 	
-	public TreeMap<String,String> sameName(String name) {
+	public TreeMap<String,String> sameName(String name) { 
 		// 1. 전달받은 name이 저장된 데이터의 이름과 같은지 확인
 		// 2. 전달받은 name과 저장된 데이터의 name이 같다면
 		// -> key를 기준으로 오름차순 해주는 TreeMap 객체에 id와 이름 저장 후 객체 반환
 		// -> 엘리먼트를 하나씩 뽑아낼때 keySet()을 쓸 것
+		
+		// TreeMap은 오름차순으로 자동 정렬 됨
 		TreeMap<String, String> result = new TreeMap<String, String>();
 		
 		for (String id : map.keySet()) {
