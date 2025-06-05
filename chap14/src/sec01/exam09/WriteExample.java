@@ -10,6 +10,10 @@ public class WriteExample {
 		
 		char[] array = {'A', 'B', 'C', 'D', 'E'};
 		
-		// 
+		// 주어진 배열의 off부터 len개 까지의 문자를 출력
+		writer.write(array, 1, 3);  // 1번 인덱스부터 3개를 출력
+		
+		writer.flush();
+		writer.close();
 	}
 }
