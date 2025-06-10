@@ -19,12 +19,13 @@ public class Practice {
 		long start = System.nanoTime();  // 시작 시간 측정
 	    char[] data = new char[10000];  // 데이터를 임시로 저장할 버퍼
 	    
-	    try (FileInputStream is = new FileInputStream(str + "\\나비야1.dat");
-	         Reader reader = new InputStreamReader(is)) {
-	        
+	    try (FileInputStream is = new FileInputStream(str + "\\나비야1.dat")) {
+	         Reader reader = new InputStreamReader(is);
 	    } catch (IOException e) {
 	        e.printStackTrace();  //예외 발생 시 출력
 	    }
+	    
+	    
 
 	    long end = System.nanoTime();  //끝 시간 측정
 	    return end - start;  // 소요 시간 반환

@@ -12,7 +12,7 @@ public class Practice {
 		// str.getBytes() → 문자열을 바이트 배열로 변환
 		// bos.write(...) → 데이터를 버퍼에 기록 (→ 자동적으로 파일에 기록됨)
 		
-		
+		// FileOutputStream만 사용
 		File file = new File("C:/test/sub");
 		file.mkdirs();  // 디렉토리가 없으면 새로 파일 만들기
 		try {
@@ -24,6 +24,7 @@ public class Practice {
 	}
 	
 	public void method2(String str) throws Exception {
+		// BufferedOutputStream을 함께 사용
 		FileOutputStream fos = new FileOutputStream("C:/test/sub/나비야2.dat");
 		BufferedOutputStream bos = new BufferedOutputStream(fos);
 		byte[] byte2 = str.getBytes();
